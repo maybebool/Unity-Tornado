@@ -32,6 +32,7 @@ public class Effector : MonoBehaviour
         private float _scalarBetweenAB;
         private Vector3 _vectorAToB;
         private Vector3 _direction;
+        private float speed = 10;
 
         private void Suction(Collider col) {
             _vectorAToB = transform.position - col.transform.position;
@@ -57,6 +58,7 @@ public class Effector : MonoBehaviour
         private void OnTriggerStay(Collider other) {
             if (other.CompareTag("Spinable")) {
                 Suction(other);
+                other.transform.position += Vector3.up * speed * Time.deltaTime;
             }
         }
 }
