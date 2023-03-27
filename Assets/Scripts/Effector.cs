@@ -17,7 +17,7 @@ public class Effector : MonoBehaviour
 
         [Header("Tornado Swirl Behaviour")]
         [Tooltip("Very fragile Value. Must be higher then the remapDistance output. Otherwise it reverse the effect")]
-        [SerializeField] private float remapIndicationValue;
+        [SerializeField] private float referceIndicationValue;
         
         [Tooltip("This value must be higher then the posPointB or higher then 21")]
         [SerializeField] private float posPointA = 8;
@@ -28,11 +28,12 @@ public class Effector : MonoBehaviour
         [SerializeField] [Range(0.6f,1f)] private float tofA = 1;
         [SerializeField] [Range(0f,0.5f)] private float tofB = 1;
         
-        private float _remapDistance;
+        private float _thresholdDistance;
         private float _scalarBetweenAB;
         private Vector3 _vectorAToB;
         private Vector3 _direction;
         private float speed = 10;
+        private float upMultiplier = 2.2f;
 
         private void Suction(Collider col) {
             _vectorAToB = transform.position - col.transform.position;
@@ -41,24 +42,28 @@ public class Effector : MonoBehaviour
             
             // takes the scalar of AB as input and generate a quasi linear interpolation between two points
             // remap distance will reverse after max reach
-            _remapDistance = _scalarBetweenAB.Swirl(posPointA, posPointB, tofA, tofB);
+            _thresholdDistance = _scalarBetweenAB.Swirl(posPointA, posPointB, tofA, tofB);
             
             // if the remapDistance is lower then the given value it reserve the direction by acceleration and gives the needed tornado effect
             // as the objects starts with acceleration then gets moved from A to B by the vector direction. If max is reached direction 
             // gets replaced with acceleration, which inverse the object movement
-            if (_remapDistance > remapIndicationValue) {
+            if (_thresholdDistance > referceIndicationValue) {
                 _direction = -_direction;
-                _remapDistance = acceleration;
+                _thresholdDistance = acceleration;
             }
 
             if (col.attachedRigidbody != null)
-                col.attachedRigidbody.AddForce(_direction * centripetalForce * forceMultiplier * _remapDistance);
+                col.attachedRigidbody.AddForce(_direction * centripetalForce * forceMultiplier * _thresholdDistance);
         }
 
         private void OnTriggerStay(Collider other) {
+            var reduction = 0.9f;
             if (other.CompareTag("Spinable")) {
                 Suction(other);
-                other.transform.position += Vector3.up * speed * Time.deltaTime;
+                //other.transform.position += Vector3.up * speed * Time.deltaTime;
+                //other.attachedRigidbody.mass -= reduction * Time.deltaTime;
             }
         }
+
+        
 }
