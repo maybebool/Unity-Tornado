@@ -1,39 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class Effector : MonoBehaviour
 {
+        
+        private const float posPointA = 0;
+        private const float posPointB = 10;
+        
+        
         [Header("Tornado Force")]
         [Tooltip("The power how strong an object will be hold into the tornado")]
         [SerializeField] private float centripetalForce = 10;
         
+        [FormerlySerializedAs("acceleration")]
         [Tooltip("The power how fast an object will be sucked into the tornado")]
-        [SerializeField] private float acceleration = 3;
+        [SerializeField] private float push = 3;
         
         [Tooltip("Overall multiplier. Higher value means bigger tornado swirl diameter")]
-        [SerializeField] private float forceMultiplier;
-
-        [Header("Tornado Swirl Behaviour")]
-        [Tooltip("Very fragile Value. Must be higher then the remapDistance output. Otherwise it reverse the effect")]
-        [SerializeField] private float referceIndicationValue;
+        [SerializeField] private float forceMultiplier = 10f;
         
-        [Tooltip("This value must be higher then the posPointB or higher then 21")]
-        [SerializeField] private float posPointA = 8;
-        [SerializeField] private float posPointB = 5;
+        [Header("Tornado Swirl Behaviour")]
+        [Tooltip("Very fragile Value.")]
+        [SerializeField] private float reverseIndicationValue = 0.8f;
+        
         
         // a positive value of (d-c) would lead to a negative return in the Swirl effect.
         // tofA must be bigger then tofB because we need a negative value for t
-        [SerializeField] [Range(0.6f,1f)] private float tofA = 1;
-        [SerializeField] [Range(0f,0.5f)] private float tofB = 1;
+        private int tofA = 1;
+        private int tofB = 0;
         
         private float _thresholdDistance;
         private float _scalarBetweenAB;
         private Vector3 _vectorAToB;
         private Vector3 _direction;
-        private float speed = 10;
-        private float upMultiplier = 2.2f;
 
         private void Suction(Collider col) {
             _vectorAToB = transform.position - col.transform.position;
@@ -47,9 +46,9 @@ public class Effector : MonoBehaviour
             // if the remapDistance is lower then the given value it reserve the direction by acceleration and gives the needed tornado effect
             // as the objects starts with acceleration then gets moved from A to B by the vector direction. If max is reached direction 
             // gets replaced with acceleration, which inverse the object movement
-            if (_thresholdDistance > referceIndicationValue) {
+            if (_thresholdDistance > reverseIndicationValue) {
                 _direction = -_direction;
-                _thresholdDistance = acceleration;
+                _thresholdDistance = push;
             }
 
             if (col.attachedRigidbody != null)
@@ -57,13 +56,8 @@ public class Effector : MonoBehaviour
         }
 
         private void OnTriggerStay(Collider other) {
-            var reduction = 0.9f;
             if (other.CompareTag("Spinable")) {
                 Suction(other);
-                //other.transform.position += Vector3.up * speed * Time.deltaTime;
-                //other.attachedRigidbody.mass -= reduction * Time.deltaTime;
             }
         }
-
-        
 }

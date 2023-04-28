@@ -11,6 +11,6 @@ public static class CentripetalEffect
         
     // Bezier Curve explaining of a + (b - a) * t
     public static float Swirl(this float scalarAB, float a, float b, float c, float d) {
-        return c + ((scalarAB - a) / (b - a)) * (d - c);
+        return (scalarAB - a) / (b - a) * (d - c) + c;
     }
 }
