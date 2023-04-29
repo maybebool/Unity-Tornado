@@ -3,8 +3,8 @@ using UnityEngine.Serialization;
 
 public class Effector : MonoBehaviour
 {
-    private const float posPointA = 0;
-    private const float posPointB = 10;
+    private const float PosPointA = 0;
+    private const float PosPointB = 10;
 
 
     [Header("Tornado Force")] [Tooltip("The power how strong an object will be hold into the tornado")] [SerializeField]
@@ -28,25 +28,23 @@ public class Effector : MonoBehaviour
     private int tofB = 0;
 
     private float _thresholdDistance;
-    private float _scalarBetweenAB;
+    private float _scalarBetweenAb;
     private Vector3 _vectorAToB;
     private Vector3 _direction;
 
-    private void Suction(Collider col)
-    {
+    private void Suction(Collider col) {
         _vectorAToB = transform.position - col.transform.position;
-        _scalarBetweenAB = _vectorAToB.magnitude;
-        _direction = _vectorAToB / _scalarBetweenAB;
+        _scalarBetweenAb = _vectorAToB.magnitude;
+        _direction = _vectorAToB / _scalarBetweenAb;
 
         // takes the scalar of AB as input and generate a quasi linear interpolation between two points
         // remap distance will reverse after max reach
-        _thresholdDistance = _scalarBetweenAB.Swirl(posPointA, posPointB, tofA, tofB);
+        _thresholdDistance = _scalarBetweenAb.Swirl(PosPointA, PosPointB, tofA, tofB);
 
         // if the remapDistance is lower then the given value it reserve the direction by acceleration and gives the needed tornado effect
         // as the objects starts with acceleration then gets moved from A to B by the vector direction. If max is reached direction 
         // gets replaced with acceleration, which inverse the object movement
-        if (_thresholdDistance > reverseIndicationValue)
-        {
+        if (_thresholdDistance > reverseIndicationValue) {
             _direction = -_direction;
             _thresholdDistance = push;
         }
@@ -55,10 +53,8 @@ public class Effector : MonoBehaviour
             col.attachedRigidbody.AddForce(_direction * centripetalForce * forceMultiplier * _thresholdDistance);
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Spinable"))
-        {
+    private void OnTriggerStay(Collider other) {
+        if (other.CompareTag("Spinable")) {
             Suction(other);
         }
     }
