@@ -318,8 +318,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 8377960726410147836, guid: bd82c9a760ea7584b99bb3e3b40e4a2b, type: 3}
   width: 20
-  height: 20
   length: 20
+  height: 20
   threshold: 4
 --- !u!1 &410087039
 GameObject:
