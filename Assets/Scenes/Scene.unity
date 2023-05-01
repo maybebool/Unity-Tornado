@@ -888,6 +888,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 3526554912871161784, guid: c222f67184a69c841bffb0fb042d0a9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3529198866604026216, guid: c222f67184a69c841bffb0fb042d0a9a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,6 +922,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSizeY.scalar
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777790472322554281, guid: c222f67184a69c841bffb0fb042d0a9a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8117126641526124230, guid: c222f67184a69c841bffb0fb042d0a9a,
         type: 3}
