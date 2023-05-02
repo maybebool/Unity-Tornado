@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -9,7 +10,7 @@ public class SpawnField : MonoBehaviour
     [SerializeField] private int height = 10;
     [SerializeField] private float threshold = 0.2f;
 
-    void Start()
+    private void DoVoxelGrid()
     {
         for (int x = 0; x < width; x++)
         {
@@ -22,5 +23,10 @@ public class SpawnField : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnMouseDown()
+    {
+        DoVoxelGrid();
     }
 }
