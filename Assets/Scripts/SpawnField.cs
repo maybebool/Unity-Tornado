@@ -17,7 +17,6 @@ public class SpawnField : MonoBehaviour
                     
                     var pos =  center + new Vector3( x, y, z ) * threshold;
                     Instantiate(prefab, pos, Quaternion.identity);
-                    Debug.Log(pos);
                 }
             }
         }
