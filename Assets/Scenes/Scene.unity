@@ -2109,6 +2109,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tornado
       objectReference: {fileID: 0}
+    - target: {fileID: 3142794136536684705, guid: c222f67184a69c841bffb0fb042d0a9a,
+        type: 3}
+      propertyPath: push
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142794136536684705, guid: c222f67184a69c841bffb0fb042d0a9a,
+        type: 3}
+      propertyPath: centripetalForce
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c222f67184a69c841bffb0fb042d0a9a, type: 3}
 --- !u!1001 &6068818090191880266
