@@ -14,7 +14,7 @@ public class MousePosition : MonoBehaviour
     private void Update() {
         screenPos = Input.mousePosition;
         var ray = Camera.main.ScreenPointToRay(screenPos);
-        if (Physics.Raycast(ray, out RaycastHit hitData, 120, hitLayer)) {
+        if (Physics.Raycast(ray, out RaycastHit hitData, 400, hitLayer)) {
             worldPos = hitData.point;
         }
         transform.position = worldPos;
