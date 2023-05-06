@@ -35,4 +35,10 @@ public class SpawnField : Singleton<SpawnField>
         DoVoxelGrid();
         sound.Play();
     }
+
+    public void DeleteAll() {
+        foreach (var p in prefabList) {
+            Destroy(p);
+        }
+    }
 }

@@ -9,4 +9,11 @@ public static class Utils
         }
     }
     
+    public static Button.ButtonClickedEvent UIBindAction(Button button, UnityAction unityAction) {
+        var evt = new Button.ButtonClickedEvent();
+        evt.AddListener(unityAction);
+        button.onClick = evt;
+        return evt;
+    }
+    
 }
