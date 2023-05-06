@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class SpawnField : MonoBehaviour
 {
@@ -10,6 +10,7 @@ public class SpawnField : MonoBehaviour
     [SerializeField] private int height = 10;
     [SerializeField] private float threshold = 0.2f;
     [SerializeField] private Vector3 center;
+    [SerializeField] private AudioSource sound;
     private List<GameObject> _prefabList = new();
 
     private void Start() {
@@ -32,13 +33,14 @@ public class SpawnField : MonoBehaviour
 
     private void OnMouseDown() {
         DoVoxelGrid();
+        sound.Play();
     }
 
 
-    public void DeleteAll()
-    {
+    public void DeleteAll() {
         foreach (var prefabs in _prefabList) {
             Destroy(prefabs);
         }
     }
+    
 }

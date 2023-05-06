@@ -992,6 +992,7 @@ MonoBehaviour:
   height: 20
   threshold: 4
   center: {x: 0, y: 0, z: 0}
+  sound: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3726,12 +3727,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810380021}
   m_CullTransparentMesh: 1
---- !u!4 &1831533606 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6068818090679925868, guid: f8055ddabf437014f8ca76e7b9db47e3,
-    type: 3}
-  m_PrefabInstance: {fileID: 6068818090191880266}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1934410524
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,31 +4259,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
-        type: 3}
-      propertyPath: center.x
-      value: -3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
-        type: 3}
-      propertyPath: center.z
-      value: -3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
-        type: 3}
-      propertyPath: spawnPos
-      value: 
-      objectReference: {fileID: 1831533606}
-    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
-        type: 3}
-      propertyPath: worldPos
-      value: 
-      objectReference: {fileID: 1831533606}
-    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
-        type: 3}
-      propertyPath: threshold
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8055ddabf437014f8ca76e7b9db47e3, type: 3}
