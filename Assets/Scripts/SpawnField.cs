@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class SpawnField : MonoBehaviour
+public class SpawnField : Singleton<SpawnField>
 {
     [SerializeField] private GameObject prefab;
     [SerializeField] private int width = 10;
@@ -11,10 +11,10 @@ public class SpawnField : MonoBehaviour
     [SerializeField] private float threshold = 0.2f;
     [SerializeField] private Vector3 center;
     [SerializeField] private AudioSource sound;
-    private List<GameObject> _prefabList = new();
+    [HideInInspector] public List<GameObject> prefabList = new();
 
     private void Start() {
-        _prefabList = new List<GameObject>();
+        prefabList = new List<GameObject>();
     }
 
     private void DoVoxelGrid()
@@ -25,7 +25,7 @@ public class SpawnField : MonoBehaviour
                     
                     var pos =  center + new Vector3( x, y, z ) * threshold;
                     var gridPrefab =  Instantiate(prefab, pos, Quaternion.identity);
-                    _prefabList.Add(gridPrefab);
+                    prefabList.Add(gridPrefab);
                 }
             }
         }
@@ -35,12 +35,4 @@ public class SpawnField : MonoBehaviour
         DoVoxelGrid();
         sound.Play();
     }
-
-
-    public void DeleteAll() {
-        foreach (var prefabs in _prefabList) {
-            Destroy(prefabs);
-        }
-    }
-    
 }
