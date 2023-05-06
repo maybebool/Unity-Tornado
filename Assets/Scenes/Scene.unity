@@ -743,12 +743,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 250222822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc57e8c20ad4aff86dfd5f5e20d16f9, type: 3}
+  m_Script: {fileID: 11500000, guid: a88dc02bd1294c0fabeaa34274fd2f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawn: {fileID: 0}
-  deleteButton: {fileID: 1713874861}
-  sound: {fileID: 1713874864}
 --- !u!1 &286056503
 GameObject:
   m_ObjectHideFlags: 0
@@ -3622,7 +3619,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 790481ddaef9bae4093048d21f3f4f79, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
