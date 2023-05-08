@@ -51,10 +51,8 @@ public class SpawnField : Singleton<SpawnField>
         sound.Play();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.A)) {
             Debug.Log("A was pressed");
             DeleteAll();
         }
