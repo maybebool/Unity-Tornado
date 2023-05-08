@@ -1039,7 +1039,6 @@ MonoBehaviour:
   threshold: 4
   center: {x: 0, y: 0, z: 0}
   sound: {fileID: 0}
-  prefabList: []
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -4457,6 +4456,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028971038166063805, guid: c222f67184a69c841bffb0fb042d0a9a,
+        type: 3}
+      propertyPath: m_Name
+      value: Animation
       objectReference: {fileID: 0}
     - target: {fileID: 3029816101443045193, guid: c222f67184a69c841bffb0fb042d0a9a,
         type: 3}
