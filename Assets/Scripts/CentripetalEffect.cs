@@ -1,6 +1,5 @@
 
-public static class CentripetalEffect
-{
+public static class CentripetalEffect {
     // scalarBetweenAB = scalarAB = (fluid value based on scalar)
     // posPointA = a   posPointB = b   ToA = c  ToB = d
     // to inverse the linear interpolation we need negative values for (d - c)
