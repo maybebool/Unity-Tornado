@@ -8,18 +8,21 @@ public class Effector : MonoBehaviour
     // a positive value of (toA - toB) would lead to a negative return in the Tornado effect.
     private const int ToA = 1;
     private const int ToB = 0;
-
-
+    
+    [Header("Tornado Physic Parameters")]
+    
     [Tooltip("The power how strong an object will be hold into the tornado")] 
     [SerializeField] private float centripetalForce = 10;
     
     
     [Tooltip("Counter force to centripetal Force")]
     [SerializeField] private float push = 3;
+    
+    [Tooltip("Overall Multiplication for centripetal Force")]
     [SerializeField] private float forceMultiplier = 10f;
     
     
-    [Tooltip("Very fragile Value.")] 
+    [Tooltip("Value point where forces will be reversed. Very fragile Value.")] 
     [SerializeField] private float reverseIndicationValue = 0.8f;
 
     

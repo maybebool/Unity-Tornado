@@ -34,7 +34,6 @@ public class SpawnField : Singleton<SpawnField>
     private void OnMouseDown() {
         DoVoxelGrid();
         sound.Play();
-        Debug.Log(sound + "Was played");
     }
 
     public void DeleteAll() {
