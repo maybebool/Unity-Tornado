@@ -20,19 +20,23 @@ MonoBehaviour:
   - m_GUID: bd82c9a760ea7584b99bb3e3b40e4a2b
     m_Address: Assets/Prefabs/Object1.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Object1
   - m_GUID: 94ad3b7adae45564db31eeaebe2e55da
     m_Address: Assets/Prefabs/Object2.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Object2
   - m_GUID: 2b6f67232a7c2ea44aa58c248b653ea7
     m_Address: Assets/Prefabs/Object3.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Object3
   - m_GUID: ee80f93902a964a419ff0bd8721a97cf
     m_Address: Assets/Prefabs/Object4.prefab
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - Object4
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 4ee6d781e3cc9254a8285e796c727340, type: 2}
   m_SchemaSet:

@@ -84,6 +84,10 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - Object1
+    - Object2
+    - Object3
+    - Object4
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: f650a43c4d38df04494c770e2b72a1be, type: 2}
