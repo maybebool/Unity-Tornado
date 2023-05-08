@@ -11,10 +11,10 @@ public class SpawnField : Singleton<SpawnField>
     [SerializeField] private float threshold = 0.2f;
     [SerializeField] private Vector3 center;
     [SerializeField] private AudioSource sound;
-    [HideInInspector] public List<GameObject> prefabList = new();
+    private List<GameObject> PrefabList { get; set; }
 
     private void Start() {
-        prefabList = new List<GameObject>();
+        PrefabList = new List<GameObject>();
     }
 
     private void DoVoxelGrid()
@@ -25,7 +25,7 @@ public class SpawnField : Singleton<SpawnField>
                     
                     var pos =  center + new Vector3( x, y, z ) * threshold;
                     var gridPrefab =  Instantiate(prefab, pos, Quaternion.identity);
-                    prefabList.Add(gridPrefab);
+                    PrefabList.Add(gridPrefab);
                 }
             }
         }
@@ -34,10 +34,11 @@ public class SpawnField : Singleton<SpawnField>
     private void OnMouseDown() {
         DoVoxelGrid();
         sound.Play();
+        Debug.Log(sound + "Was played");
     }
 
     public void DeleteAll() {
-        foreach (var p in prefabList) {
+        foreach (var p in PrefabList) {
             Destroy(p);
         }
     }
