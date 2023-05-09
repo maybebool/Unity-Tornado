@@ -9,7 +9,7 @@ using UnityEngine.Serialization;
 
 public class SpawnField : Singleton<SpawnField>
 {
-    [SerializeField] private AssetReferenceGameObject assetPrefab;
+    private List<AsyncOperationHandle<IList<GameObject>>> _assetPrefab;
     [SerializeField] private int width = 10;
     [SerializeField] private int length = 10;
     [SerializeField] private int height = 10;
@@ -24,8 +24,9 @@ public class SpawnField : Singleton<SpawnField>
     private GameObject Prefab { get; set; }
     //private Dictionary<AssetReferenceGameObject, List<GameObject>> PrefabDictionary { get; set; }
 
-    private void Start() {
-        //assetLabelReferences = new List<AssetLabelReference>();
+    private void Start()
+    {
+        _assetPrefab = new List<AsyncOperationHandle<IList<GameObject>>>();
     }
 
     // TODO releasing multiple Objects is still a problem
@@ -37,6 +38,7 @@ public class SpawnField : Singleton<SpawnField>
 
                     _loadHandle = Addressables.LoadAssetsAsync<GameObject>(assetLabelReferences, addressable => {
                         Instantiate(addressable, pos, Quaternion.identity);
+                        _assetPrefab.Add(_loadHandle);
                     }, Addressables.MergeMode.Union, true);
                 }
             }
@@ -65,7 +67,10 @@ public class SpawnField : Singleton<SpawnField>
         //
         // }
         //assetPrefab.ReleaseInstance(Prefab);
-        Addressables.Release(_loadHandle);
+        foreach (var p in _assetPrefab) {
+            Addressables.Release(p);
+        }
+        //Addressables.ReleaseInstance(_loadHandle);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
