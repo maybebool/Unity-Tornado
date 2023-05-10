@@ -88,6 +88,7 @@ MonoBehaviour:
     - Object2
     - Object3
     - Object4
+    - Audio
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: f650a43c4d38df04494c770e2b72a1be, type: 2}
