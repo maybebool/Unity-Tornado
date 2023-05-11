@@ -2599,6 +2599,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
         type: 3}
+      propertyPath: label
+      value: Object2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: width
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: length
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
       propertyPath: prefab
       value: 
       objectReference: {fileID: 6746271450800145787, guid: 94ad3b7adae45564db31eeaebe2e55da,
@@ -4024,6 +4044,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: label
+      value: Object1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: width
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: height
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
+        type: 3}
+      propertyPath: length
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6068818091262835277, guid: f8055ddabf437014f8ca76e7b9db47e3,
         type: 3}
