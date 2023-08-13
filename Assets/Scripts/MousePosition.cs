@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MousePosition : MonoBehaviour
 {
-    public Vector3 screenPos;
-    public Vector3 worldPos;
+    private Vector3 screenPos;
+    private Vector3 worldPos;
     public LayerMask hitLayer;
     private Camera _camera;
 
