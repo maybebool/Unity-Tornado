@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 public class MousePosition : MonoBehaviour
 {
     public Vector3 screenPos;
@@ -11,8 +10,7 @@ public class MousePosition : MonoBehaviour
     private void Awake() {
         _camera = Camera.main;
     }
-
-
+    
     private void Update() {
         screenPos = Input.mousePosition;
         var ray = _camera.ScreenPointToRay(screenPos);
@@ -26,6 +24,5 @@ public class MousePosition : MonoBehaviour
             worldPos = hitData.point;
             Cursor.visible = true;
         }
-        
     }
 }
