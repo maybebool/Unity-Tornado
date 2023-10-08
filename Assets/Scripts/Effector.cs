@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class Effector : MonoBehaviour
-{
+public class Effector : MonoBehaviour {
+    
     private const float PosPointA = 0;
     private const float PosPointB = 10;
     

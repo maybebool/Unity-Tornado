@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIHandler : MonoBehaviour
-{
+public class UIHandler : MonoBehaviour {
+    
     [SerializeField] private Button deleteButton;
     [SerializeField] private AudioSource deleteSound;
     private SpawnField _spawnField;
@@ -18,6 +18,4 @@ public class UIHandler : MonoBehaviour
     private void DeleteSound() {
         deleteSound.Play();
     }
-    
-    
 }

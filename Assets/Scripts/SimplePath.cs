@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class SimplePath : MonoBehaviour
-{
+public class SimplePath : MonoBehaviour {
+    
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float speed = 2f;
     private int _waypointIndex;
