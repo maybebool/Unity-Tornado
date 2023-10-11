@@ -1,4 +1,3 @@
-
 public static class CentripetalEffect {
     // scalarBetweenAB = scalarAB = (fluid value based on scalar)
     // posPointA = a   posPointB = b   ToA = c  ToB = d

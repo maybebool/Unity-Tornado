@@ -1,7 +1,7 @@
 using UnityEngine;
 
-public class CameraMovement : MonoBehaviour
-{
+public class CameraMovement : MonoBehaviour {
+    
     [SerializeField] private Transform anchor;
     private float _multiplier;
     private float _time;

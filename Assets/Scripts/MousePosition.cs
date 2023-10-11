@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MousePosition : MonoBehaviour
 {
-    private Vector3 screenPos;
-    private Vector3 worldPos;
+    private Vector3 _screenPos;
+    private Vector3 _worldPos;
     public LayerMask hitLayer;
     private Camera _camera;
 
@@ -12,16 +12,16 @@ public class MousePosition : MonoBehaviour
     }
     
     private void Update() {
-        screenPos = Input.mousePosition;
-        var ray = _camera.ScreenPointToRay(screenPos);
+        _screenPos = Input.mousePosition;
+        var ray = _camera.ScreenPointToRay(_screenPos);
         var hitBool = Physics.Raycast(ray, out RaycastHit hitData, 400, hitLayer);
         if (hitBool) {
-            worldPos = hitData.point;
+            _worldPos = hitData.point;
             Cursor.visible = false;
-            transform.position = worldPos;
+            transform.position = _worldPos;
         }
         else {
-            worldPos = hitData.point;
+            _worldPos = hitData.point;
             Cursor.visible = true;
         }
     }
