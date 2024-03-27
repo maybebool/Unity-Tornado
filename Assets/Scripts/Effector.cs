@@ -38,7 +38,7 @@ public class Effector : MonoBehaviour {
 
         // takes the scalar of AB as input and generate a quasi linear interpolation between two points
         // remap distance will reverse after max reach
-        _thresholdDistance = _scalarBetweenAb.TornadoRotation(PosPointA, PosPointB, ToA, ToB);
+        _thresholdDistance = _scalarBetweenAb.CalculateLinearInterpolation(PosPointA, PosPointB, ToA, ToB);
 
         // if the remapDistance is lower then the given value it reserve the direction by acceleration and gives the needed tornado effect
         // as the objects starts with acceleration then gets moved from A to B by the vector direction. If max is reached direction 
