@@ -6,9 +6,7 @@ public static class CentripetalEffect {
         
     // we need a positive return overall therefore the formula must be either
     // (+) + ((-) / (+)) * (-) || (+) + ((+) / (-)) * (-)
-        
-    // Bezier Curve explaining of a + (b - a) * t
-    public static float TornadoRotation(this float scalarAb, float a, float b, float c, float d) {
-        return (scalarAb - a) / (b - a) * (d - c) + c;
+    public static float CalculateLinearInterpolation(this float scalarBetweenPoints, float firstPoint, float secondPoint, float firstInterpolationPoint, float secondInterpolationPoint) {
+        return (scalarBetweenPoints - firstPoint) / (secondPoint - firstPoint) * (secondInterpolationPoint - firstInterpolationPoint) + firstInterpolationPoint;
     }
 }
