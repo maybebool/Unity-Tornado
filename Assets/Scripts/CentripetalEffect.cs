@@ -1,11 +1,19 @@
 public static class CentripetalEffect {
-    // scalarBetweenAB = scalarAB = (fluid value based on scalar)
-    // posPointA = a   posPointB = b   ToA = c  ToB = d
-    // to inverse the linear interpolation we need negative values for (d - c)
-    // possible is also a positive value for (b - a) if a is higher then max Scalar value of AB
-        
+    
     // we need a positive return overall therefore the formula must be either
     // (+) + ((-) / (+)) * (-) || (+) + ((+) / (-)) * (-)
+    
+    /// <summary>
+    /// Calculates the linear interpolation between two points based on a scalar value.
+    /// </summary>
+    /// <param name="scalarBetweenPoints">The scalar value between the two points.</param>
+    /// <param name="firstPoint">The value of the first point.</param>
+    /// <param name="secondPoint">The value of the second point.</param>
+    /// <param name="firstInterpolationPoint">The interpolation value corresponding to the first point.</param>
+    /// <param name="secondInterpolationPoint">The interpolation value corresponding to the second point.</param>
+    /// <returns>
+    /// The interpolated value based on the scalar value between the two points.
+    /// </returns>
     public static float CalculateLinearInterpolation(this float scalarBetweenPoints, float firstPoint, float secondPoint, float firstInterpolationPoint, float secondInterpolationPoint) {
         return (scalarBetweenPoints - firstPoint) / (secondPoint - firstPoint) * (secondInterpolationPoint - firstInterpolationPoint) + firstInterpolationPoint;
     }
