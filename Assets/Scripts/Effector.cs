@@ -40,7 +40,7 @@ public class Effector : MonoBehaviour {
         // remap distance will reverse after max reach
         _thresholdDistance = _scalarBetweenAb.CalculateLinearInterpolation(PosPointA, PosPointB, ToA, ToB);
 
-        // if the remapDistance is lower then the given value it reserve the direction by acceleration and gives the needed tornado effect
+        // if the remapDistance is lower as the given value it reserve the direction by acceleration and gives the needed tornado effect
         // as the objects starts with acceleration then gets moved from A to B by the vector direction. If max is reached direction 
         // gets replaced with acceleration, which inverse the object movement
         if (_thresholdDistance > reverseIndicationValue) {
